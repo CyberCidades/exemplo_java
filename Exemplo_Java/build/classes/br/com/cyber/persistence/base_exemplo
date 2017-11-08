@@ -1,0 +1,302 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.3.16
+-- Dumped by pg_dump version 9.3.16
+-- Started on 2017-11-08 10:34:03 BRST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 1 (class 3079 OID 11791)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 2015 (class 0 OID 0)
+-- Dependencies: 1
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+--
+-- TOC entry 2 (class 3079 OID 351788)
+-- Name: unaccent; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA public;
+
+
+--
+-- TOC entry 2016 (class 0 OID 0)
+-- Dependencies: 2
+-- Name: EXTENSION unaccent; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 177 (class 1259 OID 351752)
+-- Name: categoria; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE categoria (
+    id integer NOT NULL,
+    titulo text
+);
+
+
+ALTER TABLE public.categoria OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 351750)
+-- Name: categoria_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE categoria_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.categoria_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2017 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: categoria_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE categoria_id_seq OWNED BY categoria.id;
+
+
+--
+-- TOC entry 175 (class 1259 OID 351736)
+-- Name: produto; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE produto (
+    id integer NOT NULL,
+    titulo text,
+    descricao text,
+    categoria_id integer
+);
+
+
+ALTER TABLE public.produto OWNER TO postgres;
+
+--
+-- TOC entry 174 (class 1259 OID 351734)
+-- Name: produto_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE produto_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.produto_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2018 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: produto_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE produto_id_seq OWNED BY produto.id;
+
+
+--
+-- TOC entry 173 (class 1259 OID 351725)
+-- Name: usuario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE usuario (
+    id integer NOT NULL,
+    email text,
+    senha text
+);
+
+
+ALTER TABLE public.usuario OWNER TO postgres;
+
+--
+-- TOC entry 172 (class 1259 OID 351723)
+-- Name: usuario_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE usuario_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.usuario_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2019 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: usuario_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE usuario_id_seq OWNED BY usuario.id;
+
+
+--
+-- TOC entry 1887 (class 2604 OID 351755)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY categoria ALTER COLUMN id SET DEFAULT nextval('categoria_id_seq'::regclass);
+
+
+--
+-- TOC entry 1886 (class 2604 OID 351739)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY produto ALTER COLUMN id SET DEFAULT nextval('produto_id_seq'::regclass);
+
+
+--
+-- TOC entry 1885 (class 2604 OID 351728)
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY usuario ALTER COLUMN id SET DEFAULT nextval('usuario_id_seq'::regclass);
+
+
+--
+-- TOC entry 2007 (class 0 OID 351752)
+-- Dependencies: 177
+-- Data for Name: categoria; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO categoria VALUES (1, 'Alimentício');
+INSERT INTO categoria VALUES (2, 'Medicamento');
+
+
+--
+-- TOC entry 2020 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: categoria_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('categoria_id_seq', 1, false);
+
+
+--
+-- TOC entry 2005 (class 0 OID 351736)
+-- Dependencies: 175
+-- Data for Name: produto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO produto VALUES (19, 'Feijão', 'Descrição? É só feijão, não conhece?', 1);
+
+
+--
+-- TOC entry 2021 (class 0 OID 0)
+-- Dependencies: 174
+-- Name: produto_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('produto_id_seq', 19, true);
+
+
+--
+-- TOC entry 2003 (class 0 OID 351725)
+-- Dependencies: 173
+-- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO usuario VALUES (1, 'danielmatheuskuhn@gmail.com', '123');
+
+
+--
+-- TOC entry 2022 (class 0 OID 0)
+-- Dependencies: 172
+-- Name: usuario_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('usuario_id_seq', 1, true);
+
+
+--
+-- TOC entry 1893 (class 2606 OID 351760)
+-- Name: pk_categoria; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY categoria
+    ADD CONSTRAINT pk_categoria PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1891 (class 2606 OID 351744)
+-- Name: pk_produto; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY produto
+    ADD CONSTRAINT pk_produto PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1889 (class 2606 OID 351733)
+-- Name: pk_usuario; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY usuario
+    ADD CONSTRAINT pk_usuario PRIMARY KEY (id);
+
+
+--
+-- TOC entry 1894 (class 2606 OID 351761)
+-- Name: fk_produto_categoria; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY produto
+    ADD CONSTRAINT fk_produto_categoria FOREIGN KEY (categoria_id) REFERENCES categoria(id);
+
+
+--
+-- TOC entry 2014 (class 0 OID 0)
+-- Dependencies: 7
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2017-11-08 10:34:04 BRST
+
+--
+-- PostgreSQL database dump complete
+--
+
