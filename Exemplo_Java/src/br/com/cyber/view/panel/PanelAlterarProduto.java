@@ -38,16 +38,16 @@ public class PanelAlterarProduto extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        etTitulo = new br.daniel.componente.KTextField();
-        etDescricao = new br.daniel.componente.KTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btAlterar = new br.daniel.componente.KButton();
-        cbCategoria = new br.daniel.componente.KComboBox();
         jLabel4 = new javax.swing.JLabel();
         pnAlert = new javax.swing.JPanel();
         lbAlert = new javax.swing.JLabel();
         lbIconAlert = new javax.swing.JLabel();
+        etTitulo = new br.com.cyber.componente.KTextField();
+        etDescricao = new br.com.cyber.componente.KTextField();
+        cbCategoria = new br.com.cyber.componente.KComboBox();
+        btAlterar = new br.com.cyber.componente.KButton();
 
         jPanel1.setBackground(new java.awt.Color(254, 254, 254));
 
@@ -59,9 +59,6 @@ public class PanelAlterarProduto extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         jLabel3.setText("Descrição");
-
-        btAlterar.setText("Alterar");
-        btAlterar.setTheme(br.daniel.componente.KButton.ThemeOption.SUCCESS);
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 15)); // NOI18N
         jLabel4.setText("Categoria");
@@ -91,26 +88,35 @@ public class PanelAlterarProduto extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        etTitulo.setK_block_white_space(false);
+        etTitulo.setK_obrigatory(true);
+
+        btAlterar.setBackground(new java.awt.Color(38, 193, 93));
+        btAlterar.setForeground(new java.awt.Color(255, 255, 255));
+        btAlterar.setText("Alterar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(etDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(etTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnAlert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1))
+                            .addGap(250, 250, 250))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(btAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(pnAlert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(etTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(etDescricao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -150,10 +156,10 @@ public class PanelAlterarProduto extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static br.daniel.componente.KButton btAlterar;
-    public static br.daniel.componente.KComboBox cbCategoria;
-    public static br.daniel.componente.KTextField etDescricao;
-    public static br.daniel.componente.KTextField etTitulo;
+    public static br.com.cyber.componente.KButton btAlterar;
+    public static br.com.cyber.componente.KComboBox cbCategoria;
+    public static br.com.cyber.componente.KTextField etDescricao;
+    public static br.com.cyber.componente.KTextField etTitulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

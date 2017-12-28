@@ -6,8 +6,8 @@
 package br.com.cyber.util;
 
 
-import br.daniel.componente.KButton;
-import br.daniel.componente.KToolTip;
+import br.com.cyber.componente.KButton;
+import br.com.cyber.componente.KToolTip;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;

@@ -65,19 +65,10 @@ public class AdicionarProduto extends javax.swing.JDialog {
     private void initComponents() {
 
         panelAdicionarProduto1 = new br.com.cyber.view.panel.PanelAdicionarProduto();
+        panelAdicionarProduto2 = new br.com.cyber.view.panel.PanelAdicionarProduto();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAdicionarProduto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelAdicionarProduto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(panelAdicionarProduto2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,5 +117,6 @@ public class AdicionarProduto extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private br.com.cyber.view.panel.PanelAdicionarProduto panelAdicionarProduto1;
+    private br.com.cyber.view.panel.PanelAdicionarProduto panelAdicionarProduto2;
     // End of variables declaration//GEN-END:variables
 }

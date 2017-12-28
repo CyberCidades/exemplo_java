@@ -19,10 +19,10 @@ public class Conexao {
     private static final Logger LOG = Logger.getLogger(Conexao.class.getName());
     
 
-    private static String HOST     = "localhost";
-    private static String BASE     = "exemplo_java";
-    private static String USER     = "*";
-    private static String PASSWORD = "*";
+    private static String HOST     = "10.1.1.5";
+    private static String BASE     = "base_exemplo";
+    private static String USER     = "postgres";
+    private static String PASSWORD = "postgres";
     
     public static Connection getConnection() {
 

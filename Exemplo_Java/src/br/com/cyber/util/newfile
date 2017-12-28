@@ -1,0 +1,40 @@
+
+ PanelAlterarProduto panelalterarproduto;
+    /**
+     * Creates new form AlterarProduto
+     * @param parent
+     * @param modal
+     * @param produto_id
+     */
+    public AlterarProduto(java.awt.Frame parent, boolean modal, Integer produto_id) {
+        super(parent, modal);
+        initComponents();
+        this.setLocationRelativeTo(null);
+        setResizable(false);
+        
+        AlterarProdutoController apc = new AlterarProdutoController();
+        apc.setFormulario(produto_id);
+                
+        // listeners do botao Alterar Produto ao pressionar enter e clicar
+        
+        panelalterarproduto.btAlterar.addMouseListener(new MouseAdapter() {
+            
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (apc.alterarProduto(produto_id)) {
+                    dispose();
+                }
+            }
+        });
+        
+        /* evento Press */
+        panelalterarproduto.btAlterar.addKeyListener(new KeyAdapter() {
+            
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (apc.alterarProduto(produto_id)) {
+                    dispose();
+                }
+            }
+        });
+    }
