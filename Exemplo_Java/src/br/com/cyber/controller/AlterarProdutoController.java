@@ -73,8 +73,8 @@ public class AlterarProdutoController {
 
         ProdutoDAO pdao = new ProdutoDAO();
 
-        if (verificarFormulario(titulo, descricao, categoria_id)) {
-
+        if (verificarFormulario(titulo, descricao, categoria_id)) 
+        {
             boolean alteracao = pdao.alterarProduto(new Produto(produto_id, titulo, descricao, new Categoria(categoria_id)));
 
             if (alteracao) {

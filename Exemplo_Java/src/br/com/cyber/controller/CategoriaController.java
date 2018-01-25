@@ -6,6 +6,7 @@
 package br.com.cyber.controller;
 
 import br.com.cyber.DAO.CategoriaDAO;
+import br.com.cyber.componente.KComboBox;
 import br.com.cyber.entity.Categoria;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -22,11 +23,13 @@ public class CategoriaController {
     /*
         Popula os Combobox
     */
-    public static void setComboBox(JComboBox combobox) 
+    public static void setComboBox(KComboBox combobox) 
     {
         CategoriaDAO cdao = new CategoriaDAO();
         
         categorias = cdao.selecionaTodasCategorias();
+        
+        System.out.println("cat: "+categorias);
         
         String[] array = new String[categorias.size()];
         

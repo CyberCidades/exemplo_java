@@ -36,7 +36,7 @@ public class ListagemProduto extends javax.swing.JFrame {
         panellistagemproduto.btAdicionarProduto.addMouseListener(new MouseAdapter() {
             
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 AdicionarProduto ap = new AdicionarProduto(listagemproduto, true);
                 ap.setVisible(true);
             }
@@ -72,7 +72,7 @@ public class ListagemProduto extends javax.swing.JFrame {
         panellistagemproduto.btSearch.addMouseListener(new MouseAdapter() {
             
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 ListagemProdutoController lpc = new ListagemProdutoController();
                 lpc.atualizaTabela();
             }

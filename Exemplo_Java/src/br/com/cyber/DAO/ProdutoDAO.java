@@ -47,7 +47,6 @@ public class ProdutoDAO {
                 produto_id = rs.getInt(1);
             }
             
-            pstmt.close();
             return produto_id;
             
         } catch(SQLException e) {
@@ -81,7 +80,6 @@ public class ProdutoDAO {
                 
                 produtos.add(p);
             }
-            conn.close();
             stmt.close();
             return produtos;
             
@@ -153,7 +151,6 @@ public class ProdutoDAO {
             }
 
             stmt.close();
-            conn.close();
             return produtos;
         } catch (SQLException e) {
             System.out.println(e.getMessage());

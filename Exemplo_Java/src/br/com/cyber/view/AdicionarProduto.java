@@ -31,13 +31,12 @@ public class AdicionarProduto extends javax.swing.JDialog {
         this.setLocationRelativeTo(null); // abre a janela centralizada
         setResizable(false); // não permite alterar o tamanho da janela
         
-        
          // listeners do botao Adicionar ao pressionar enter e clicar
          
         paneladicionarproduto.btAdicionar.addMouseListener(new MouseAdapter() {
             
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 AdicionarProdutoController apc = new AdicionarProdutoController();
                 apc.cadastrarProduto();
             }

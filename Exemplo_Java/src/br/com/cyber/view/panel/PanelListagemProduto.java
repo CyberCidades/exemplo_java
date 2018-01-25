@@ -41,9 +41,9 @@ public class PanelListagemProduto extends javax.swing.JPanel {
         etSearch = new br.com.cyber.componente.KTextField();
         btSearch = new br.com.cyber.componente.KButton();
         btClear = new br.com.cyber.componente.KButton();
-        btAdicionarProduto = new br.com.cyber.componente.KButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jtProduto = new br.com.cyber.componente.Ktable();
+        btAdicionarProduto = new br.com.cyber.componente.KButton();
 
         ktable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -69,12 +69,9 @@ public class PanelListagemProduto extends javax.swing.JPanel {
         btSearch.setBackground(new java.awt.Color(38, 193, 93));
         btSearch.setForeground(new java.awt.Color(255, 255, 255));
         btSearch.setText("Buscar");
+        btSearch.setOriginal_bk_color(new java.awt.Color(0, 153, 153));
 
         btClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cyber/imagens/eraser-16.png"))); // NOI18N
-
-        btAdicionarProduto.setBackground(new java.awt.Color(38, 193, 93));
-        btAdicionarProduto.setForeground(new java.awt.Color(255, 255, 255));
-        btAdicionarProduto.setText("Adicionar Produto");
 
         jtProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -88,6 +85,12 @@ public class PanelListagemProduto extends javax.swing.JPanel {
             }
         ));
         jScrollPane3.setViewportView(jtProduto);
+
+        btAdicionarProduto.setBackground(new java.awt.Color(38, 193, 93));
+        btAdicionarProduto.setForeground(new java.awt.Color(255, 255, 255));
+        btAdicionarProduto.setText("Adicionar Produto");
+        btAdicionarProduto.setBk_focus_gained(new java.awt.Color(38, 193, 93));
+        btAdicionarProduto.setBk_focus_lost(new java.awt.Color(38, 193, 93));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,10 +106,9 @@ public class PanelListagemProduto extends javax.swing.JPanel {
                         .addComponent(btSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btClear, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btAdicionarProduto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAdicionarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,9 +116,9 @@ public class PanelListagemProduto extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel2)
-                .addGap(61, 61, 61)
+                .addGap(56, 56, 56)
                 .addComponent(btAdicionarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,8 +127,8 @@ public class PanelListagemProduto extends javax.swing.JPanel {
                         .addComponent(btSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

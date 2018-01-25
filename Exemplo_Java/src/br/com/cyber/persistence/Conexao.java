@@ -17,12 +17,13 @@ import java.util.logging.Logger;
 public class Conexao {
 
     private static final Logger LOG = Logger.getLogger(Conexao.class.getName());
-    
-
-    private static String HOST     = "10.1.1.5";
+   
+    private static String HOST     = "10.1.1.9";
     private static String BASE     = "base_exemplo";
     private static String USER     = "postgres";
     private static String PASSWORD = "postgres";
+    
+    private static Connection conn = null;
     
     public static Connection getConnection() {
 
@@ -34,7 +35,10 @@ public class Conexao {
         }
 
         try {
-            return DriverManager.getConnection("jdbc:postgresql://"+HOST+":5432/"+BASE+"",USER, PASSWORD);	
+            if (conn == null) {
+                conn = DriverManager.getConnection("jdbc:postgresql://"+HOST+":5432/"+BASE+"",USER, PASSWORD);
+            }
+            return conn;
 
         } catch (SQLException e) {
            System.out.println(LOG+" "+e.getMessage());

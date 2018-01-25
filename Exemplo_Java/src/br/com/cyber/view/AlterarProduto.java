@@ -39,7 +39,7 @@ public class AlterarProduto extends javax.swing.JDialog {
         panelalterarproduto.btAlterar.addMouseListener(new MouseAdapter() {
             
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 if (apc.alterarProduto(produto_id)) {
                     dispose();
                 }

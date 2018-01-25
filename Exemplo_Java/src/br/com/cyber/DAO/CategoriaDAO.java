@@ -46,7 +46,6 @@ public class CategoriaDAO {
                 
                 categorias.add(c);
             }
-            conn.close();
             stmt.close();
             return categorias;
             
